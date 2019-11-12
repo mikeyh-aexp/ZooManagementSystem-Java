@@ -3,10 +3,11 @@ package org.softwire.training.zoo.services;
 import org.softwire.training.zoo.models.Animal;
 import org.softwire.training.zoo.models.Keeper;
 import org.softwire.training.zoo.models.Scheduler;
+import org.softwire.training.zoo.models.SchedulerClass;
 
 import java.util.List;
 
-public class FeedingScheduler implements Scheduler {
+public class FeedingScheduler extends SchedulerClass {
     private static FeedingScheduler instance;
 
     private FeedingScheduler() {
@@ -19,7 +20,10 @@ public class FeedingScheduler implements Scheduler {
         return instance;
     }
 
+
     public void assignJobs(List<Keeper<? extends Animal>> keepers) {
         keepers.forEach(keeper -> keeper.getResponsibleAnimals().forEach(keeper::feed));
     }
+
+
 }

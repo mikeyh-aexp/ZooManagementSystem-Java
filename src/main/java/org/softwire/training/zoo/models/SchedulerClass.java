@@ -2,10 +2,8 @@ package org.softwire.training.zoo.models;
 
 import java.util.List;
 
-public class SchedulerClass {
+public abstract class SchedulerClass {
 
-    public void assignJobs(List<Keeper<? extends Animal>> keepers) {
-        keepers.forEach(keeper -> keeper.getResponsibleAnimals().forEach(keeper::feed));
-    }
+    public abstract void assignJobs(List<Keeper<? extends Animal>> keepers);
 
 }

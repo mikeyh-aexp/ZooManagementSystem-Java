@@ -1,13 +1,10 @@
 package org.softwire.training.zoo.services;
 
-import org.softwire.training.zoo.models.Animal;
-import org.softwire.training.zoo.models.CanBeGroomed;
-import org.softwire.training.zoo.models.Keeper;
-import org.softwire.training.zoo.models.Scheduler;
+import org.softwire.training.zoo.models.*;
 
 import java.util.List;
 
-public class GroomingScheduler implements Scheduler {
+public class GroomingScheduler extends SchedulerClass {
     private static GroomingScheduler instance;
 
     private GroomingScheduler() {

@@ -35,7 +35,7 @@ public class App {
         Rabbit babyRabbit = new Rabbit(LocalDate.now());
         smallAnimalKeeper.startLookingAfter(babyRabbit);
 
-        List<Scheduler> schedulers = new ArrayList<>();
+        List<SchedulerClass> schedulers = new ArrayList<>();
         schedulers.add(FeedingScheduler.getInstance());
         schedulers.add(GroomingScheduler.getInstance());
         schedulers.add(SweepingScheduler.getInstance());
