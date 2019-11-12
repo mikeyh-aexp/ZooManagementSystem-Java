@@ -1,12 +1,10 @@
 package org.softwire.training.zoo.services;
 
-import org.softwire.training.zoo.models.Animal;
-import org.softwire.training.zoo.models.CanBeGroomed;
-import org.softwire.training.zoo.models.Keeper;
+import org.softwire.training.zoo.models.*;
 
 import java.util.List;
 
-public class GroomingScheduler {
+public class GroomingScheduler extends SchedulerClass {
     private static GroomingScheduler instance;
 
     private GroomingScheduler() {
@@ -19,11 +17,13 @@ public class GroomingScheduler {
         return instance;
     }
 
-    public void assignGroomingJobs(List<Keeper<? extends Animal>> keepers) {
+    @Override
+    public void assignJobs(List<Keeper<? extends Animal>> keepers) {
         keepers.forEach(keeper -> keeper.getResponsibleAnimals().forEach(animal -> {
             if (animal instanceof CanBeGroomed) {
                 keeper.groom((CanBeGroomed) animal);
             }
         }));
     }
+
 }
