@@ -18,7 +18,6 @@ public class SweepingScheduler extends SchedulerClass {
         return instance;
     }
 
-    @Override
     public void assignJobs(List<Keeper<? extends Animal>> keepers) {
         keepers.forEach(keeper -> keeper.getResponsibleAnimals().forEach(animal -> {
             if (animal instanceof CanHaveMuckSweptOut) {
