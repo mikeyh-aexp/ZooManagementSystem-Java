@@ -4,7 +4,7 @@ import org.softwire.training.zoo.models.*;
 
 import java.util.List;
 
-public class SweepingScheduler extends SchedulerClass {
+public class SweepingScheduler implements Scheduler {
 
     private static SweepingScheduler instance;
 
@@ -18,7 +18,6 @@ public class SweepingScheduler extends SchedulerClass {
         return instance;
     }
 
-    @Override
     public void assignJobs(List<Keeper<? extends Animal>> keepers) {
         keepers.forEach(keeper -> keeper.getResponsibleAnimals().forEach(animal -> {
             if (animal instanceof CanHaveMuckSweptOut) {
