@@ -4,7 +4,7 @@ import org.softwire.training.zoo.models.*;
 
 import java.util.List;
 
-public class SweepingScheduler extends SchedulerClass {
+public class SweepingScheduler implements Scheduler {
 
     private static SweepingScheduler instance;
 
